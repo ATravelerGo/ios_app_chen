@@ -1,27 +1,34 @@
-import 'package:flutter/material.dart'; //必须得 这个是主题
+import "package:flutter/cupertino.dart";
+import "package:flutter/material.dart";
+import "package:flutter/widgets.dart";
 
 void main() {
-  // runApp(const Center(
-  //   child: Text(
-  //     "你好Flutter",
-  //     textDirection: TextDirection.ltr,
-  //     style: TextStyle(color: Colors.yellow, fontSize: 40),
-  //   ),
-  // )); //flutter入口方法
-
   runApp(MaterialApp(
     home: Scaffold(
-      appBar: AppBar(
-        title: const Text("你好Flutter"),
-        backgroundColor: Colors.amber,
-      ),
-      body: const Center(
-        child: Text(
-          "你好Flutter",
-          textDirection: TextDirection.ltr,
-          style: TextStyle(color: Colors.red, fontSize: 40),
+        appBar: AppBar(
+          title: Text("你好Flutter"),
+        ),
+        body: const MyApp()),
+  ));
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        alignment: Alignment.topCenter,
+        height: 100,
+        width: 100,
+        padding: const EdgeInsets.only(left: 10.0, right: 10, top: 20),
+        decoration: const BoxDecoration(color: Colors.amberAccent),
+        child: const Text(
+          "你好flutter",
+          style: TextStyle(color: Colors.blueAccent),
         ),
       ),
-    ),
-  ));
+    );
+  }
 }
